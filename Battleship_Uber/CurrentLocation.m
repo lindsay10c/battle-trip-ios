@@ -36,7 +36,7 @@
     [self->mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-        [locationManager requestWhenInU seAuthorization];
+        [locationManager requestWhenInUseAuthorization];
 
     [locationManager startUpdatingLocation];
     
