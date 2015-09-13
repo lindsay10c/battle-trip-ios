@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Profile-->
@@ -16,33 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="158" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="195" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="uber" translatesAutoresizingMaskIntoConstraints="NO" id="Aka-0t-9b1">
+                                <rect key="frame" x="-19" y="-10" width="619" height="561"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="Aka-0t-9b1" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="6Xw-0K-WXi"/>
+                            <constraint firstItem="Aka-0t-9b1" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-8" id="QbR-Mw-VwV"/>
+                            <constraint firstItem="Aka-0t-9b1" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-8" id="XKZ-dm-5z9"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Aka-0t-9b1" secondAttribute="bottom" id="fbh-Ti-8aD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aka-0t-9b1" secondAttribute="trailing" constant="-8" id="h0V-Rm-aZM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aka-0t-9b1" secondAttribute="trailing" constant="-8" id="tbH-yo-j8X"/>
+                            <constraint firstItem="Aka-0t-9b1" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="uoy-Sh-7V0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="fa-user" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="734" y="-458"/>
         </scene>
         <!--Map-->
         <scene sceneID="wg7-f3-ORb">
@@ -52,7 +46,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </mapView>
-                    <tabBarItem key="tabBarItem" title="Map" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map (1)" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="mapView" destination="zh9-zb-1vx" id="rye-FZ-Ixf"/>
                     </connections>
@@ -60,25 +54,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
-        </scene>
-        <!--Notifications-->
-        <scene sceneID="Hn1-Yw-2QM">
-            <objects>
-                <viewController id="uwW-Qs-tUK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jeh-KN-L8V"/>
-                        <viewControllerLayoutGuide type="bottom" id="KyD-Qi-qKd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pCF-wf-BeJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Notifications" id="uzf-bn-R9N"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tNe-hP-aCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="100" y="1050"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -93,7 +68,6 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="uwW-Qs-tUK" kind="relationship" relationship="viewControllers" id="7nu-hX-l2F"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -101,4 +75,9 @@
             <point key="canvasLocation" x="-64" y="-20"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fa-user" width="25" height="27"/>
+        <image name="map (1)" width="25" height="33"/>
+        <image name="uber" width="310" height="492"/>
+    </resources>
 </document>
