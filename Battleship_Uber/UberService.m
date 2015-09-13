@@ -77,8 +77,13 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
     [request setHTTPBody:postData];
 
     NSURLSessionDataTask *postDataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        NSLog(@"%@", response);
         NSLog(@"%@", error);
-        
+        if([httpResponse statusCode] == 200){
+            NSLog(@"success!");
+        }
+        // The server answers with an error because it doesn't receive the params
     }];
     [postDataTask resume];
 }
