@@ -18,6 +18,7 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
     NSTimer *_updatingTimer;
 }
 
+// start timer
 - (void)startUpdating {
     _updatingTimer = [NSTimer scheduledTimerWithTimeInterval:4.0
                                      target:self
@@ -33,6 +34,7 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
     }
 }
 
+// get spoof data from our node server
 - (void)jsonSpoofDetails {
     NSLog(@"tick");
     //NSString *status = [NSString stringWithFormat: @"%@requestIDhere", BaseURLString];
@@ -40,11 +42,13 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        // convert json to dictionary
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSLog(@"%@", json);
         NSString *status = [json objectForKey:@"status"];
         NSDictionary *location = [json objectForKey:@"location"];
         NSLog(@"%@", status);
+        // check if trip is completed
         if([status  isEqual: @"completed"]){
             NSLog(@"let's ride");
             [self sendFinalDestinationWithLat:[location objectForKey:@"latitude"] withLon:[location objectForKey:@"longitude"]];
@@ -55,6 +59,7 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
     
 }
 
+// send post request to our node server to check geo fencing on ship radius'
 - (void) sendFinalDestinationWithLat:(NSString *)lat withLon:(NSString *)lon {
     NSError *error;
     NSString *dataString = [NSString stringWithFormat:@"lat=%@&lon=%@", lat, lon];
@@ -78,9 +83,13 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
     [postDataTask resume];
 }
 
-- (IBAction)jsonUberDetails:(id)sender
+
+// get data from uber
+- (void)jsonUberDetails
 {
     // NSLog(@"tick");
+    // for the stringWithFormat but the {requestId} which we may need to get from the history endpoint?
+    // not sure how often the history endpoint updates
     NSString *status = [NSString stringWithFormat: @"%@requestIDhere", BaseURLString];
     NSURL *url = [NSURL URLWithString:status];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
