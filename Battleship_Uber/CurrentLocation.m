@@ -47,6 +47,9 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     [locations lastObject];
     NSLog(@"Location is %@", [locations lastObject]);
+    CLLocation *location = [locations lastObject];
+    _uberService.location = location;
+    
     
 //    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
 //    CLLocation *coord = (CLLocation *)([locations lastObject]);

@@ -11,6 +11,7 @@
 #import "UberService.h"
 
 static NSString * const BaseURLString = @"https://api.uber.com/v1/";
+static NSString * const BaseURLV = @"https://api.uber.com/v1/products";
 static NSString * const BaseSpoofServer = @"https://battletrip.herokuapp.com/uber-details";
 static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuapp.com/destination";
 
@@ -19,10 +20,10 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
 }
 
 // start timer
-- (void)startUpdating {
+- (void)startUpdating{
     _updatingTimer = [NSTimer scheduledTimerWithTimeInterval:4.0
                                      target:self
-                                   selector:@selector(jsonSpoofDetails)
+                                    selector:@selector(jsonSpoofDetails)
                                    userInfo:nil
                                     repeats:YES];
 }
@@ -34,8 +35,36 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
     }
 }
 
+
+- (void)requestData {
+    NSString *serverToken = @"Ok8X-cDaRhxPJIui5cUZksxRRODCzC8WKkQu75u-";
+    
+    
+
+    NSString *lat = [NSString stringWithFormat:@"%f", _location.coordinate.latitude];
+    NSString *lon = [NSString stringWithFormat:@"%f", _location.coordinate.longitude];
+    // products?latitude=37.7759792&longitude=-122.41823'
+    NSString *newUrl = [NSString stringWithFormat:@"%@?latitude=%@&longitude=%@", BaseURLV, lat, lon];
+    
+    NSURL *url = [NSURL URLWithString:newUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *string = [NSString stringWithFormat:@"Token %@", serverToken];
+    [request addValue:string forHTTPHeaderField:@"Authorization"];
+    
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSLog(@"%@", json);
+    }];
+    [dataTask resume];
+    
+}
+
 // get spoof data from our node server
 - (void)jsonSpoofDetails {
+    [self requestData];
+    
     NSLog(@"tick");
     //NSString *status = [NSString stringWithFormat: @"%@requestIDhere", BaseURLString];
     NSURL *url = [NSURL URLWithString:BaseSpoofServer];
