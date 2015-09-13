@@ -12,6 +12,7 @@
 
 static NSString * const BaseURLString = @"https://api.uber.com/v1/requests/";
 static NSString * const BaseSpoofServer = @"https://battletrip.herokuapp.com/uber-details";
+static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuapp.com/destination";
 
 @implementation UberService {
     NSTimer *_updatingTimer;
@@ -42,16 +43,39 @@ static NSString * const BaseSpoofServer = @"https://battletrip.herokuapp.com/ube
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSLog(@"%@", json);
         NSString *status = [json objectForKey:@"status"];
+        NSDictionary *location = [json objectForKey:@"location"];
         NSLog(@"%@", status);
         if([status  isEqual: @"completed"]){
             NSLog(@"let's ride");
-            
+            [self sendFinalDestinationWithLat:[location objectForKey:@"latitude"] withLon:[location objectForKey:@"longitude"]];
         }
-        
         
     }];
     [dataTask resume];
     
+}
+
+- (void) sendFinalDestinationWithLat:(NSString *)lat withLon:(NSString *)lon {
+    NSError *error;
+    NSString *dataString = [NSString stringWithFormat:@"lat=%@&lon=%@", lat, lon];
+    
+    NSURL *url = [NSURL URLWithString:FinalDestinationEndpoint];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPBody = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPMethod = @"POST";
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    NSDictionary *mapData = [[NSDictionary alloc] initWithObjectsAndKeys: lat, @"lat", lon, @"lon",
+                             nil];
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:mapData options:0 error:&error];
+    [request setHTTPBody:postData];
+
+    NSURLSessionDataTask *postDataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"%@", error);
+        // The server answers with an error because it doesn't receive the params
+    }];
+    [postDataTask resume];
 }
 
 - (IBAction)jsonUberDetails:(id)sender
