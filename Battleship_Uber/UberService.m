@@ -10,16 +10,17 @@
 
 #import "UberService.h"
 
-static NSString * const BaseURLString = @"https://api.uber.com/v1/products";
+static NSString * const BaseURLString = @"https://api.uber.com/v1/requests/";
+static NSString * const BaseSpoofServer = @"https://battletrip.herokuapp.com/uber-details";
 
 @implementation UberService {
     NSTimer *_updatingTimer;
 }
 
 - (void)startUpdating {
-    _updatingTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
+    _updatingTimer = [NSTimer scheduledTimerWithTimeInterval:4.0
                                      target:self
-                                   selector:@selector(jsonLocation:)
+                                   selector:@selector(jsonSpoofDetails)
                                    userInfo:nil
                                     repeats:YES];
 }
@@ -31,14 +32,37 @@ static NSString * const BaseURLString = @"https://api.uber.com/v1/products";
     }
 }
 
-- (IBAction)jsonLocation:(id)sender
+- (void)jsonSpoofDetails {
+    NSLog(@"tick");
+    //NSString *status = [NSString stringWithFormat: @"%@requestIDhere", BaseURLString];
+    NSURL *url = [NSURL URLWithString:BaseSpoofServer];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSLog(@"%@", json);
+        NSString *status = [json objectForKey:@"status"];
+        NSLog(@"%@", status);
+        if([status  isEqual: @"completed"]){
+            NSLog(@"let's ride");
+            
+        }
+        
+        
+    }];
+    [dataTask resume];
+    
+}
+
+- (IBAction)jsonUberDetails:(id)sender
 {
-    NSString *status = [NSString stringWithFormat: @"%@Battleship_Uber.php?format=jason", BaseURLString];
+    // NSLog(@"tick");
+    NSString *status = [NSString stringWithFormat: @"%@requestIDhere", BaseURLString];
     NSURL *url = [NSURL URLWithString:status];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
+        NSLog(@"completed dataTask?");
     }];
     [dataTask resume];
     

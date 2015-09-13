@@ -10,5 +10,6 @@
 
 - (void)startUpdating;
 - (void)stopUpdating;
+- (void)jsonSpoofDetails;
 
 @end
