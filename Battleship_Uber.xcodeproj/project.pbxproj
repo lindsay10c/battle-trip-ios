@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C8E6841BA53609006FB76C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8E6821BA53609006FB76C /* Bolts.framework */; };
+		18C8E6851BA53609006FB76C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8E6831BA53609006FB76C /* Parse.framework */; };
 		3BD71DAC1BA4BFCB00B27F58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DAB1BA4BFCB00B27F58 /* main.m */; };
 		3BD71DAF1BA4BFCB00B27F58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DAE1BA4BFCB00B27F58 /* AppDelegate.m */; };
 		3BD71DB21BA4BFCB00B27F58 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DB11BA4BFCB00B27F58 /* FirstViewController.m */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18C8E6821BA53609006FB76C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		18C8E6831BA53609006FB76C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		3BD71DA61BA4BFCB00B27F58 /* Battleship_Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Battleship_Uber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD71DAA1BA4BFCB00B27F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BD71DAB1BA4BFCB00B27F58 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD71DD31BA4BFD400B27F58 /* MapKit.framework in Frameworks */,
+				18C8E6851BA53609006FB76C /* Parse.framework in Frameworks */,
+				18C8E6841BA53609006FB76C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,10 +75,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3BD71D9D1BA4BFCB00B27F58 = {
+		18C8E6811BA535F2006FB76C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3BD71DD21BA4BFD400B27F58 /* MapKit.framework */,
+				18C8E6821BA53609006FB76C /* Bolts.framework */,
+				18C8E6831BA53609006FB76C /* Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BD71D9D1BA4BFCB00B27F58 = {
+			isa = PBXGroup;
+			children = (
+				18C8E6811BA535F2006FB76C /* Frameworks */,
 				3BD71DA81BA4BFCB00B27F58 /* Battleship_Uber */,
 				3BD71DC51BA4BFCB00B27F58 /* Battleship_UberTests */,
 				3BD71DA71BA4BFCB00B27F58 /* Products */,
@@ -368,6 +384,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Battleship_Uber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -378,6 +398,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Battleship_Uber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -437,6 +461,7 @@
 				3BD71DCE1BA4BFCB00B27F58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BD71DCF1BA4BFCB00B27F58 /* Build configuration list for PBXNativeTarget "Battleship_UberTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +470,7 @@
 				3BD71DD11BA4BFCB00B27F58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
