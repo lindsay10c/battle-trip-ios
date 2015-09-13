@@ -10,7 +10,7 @@
 
 #import "UberService.h"
 
-static NSString * const BaseURLString = @"https://api.uber.com/v1/requests/";
+static NSString * const BaseURLString = @"https://api.uber.com/v1/";
 static NSString * const BaseSpoofServer = @"https://battletrip.herokuapp.com/uber-details";
 static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuapp.com/destination";
 
@@ -88,9 +88,9 @@ static NSString * const FinalDestinationEndpoint = @"https://battletrip.herokuap
 - (void)jsonUberDetails
 {
     // NSLog(@"tick");
-    // for the stringWithFormat but the {requestId} which we may need to get from the history endpoint?
+    // for the stringWithFormat put the {requestId} which we may need to get from the history endpoint?
     // not sure how often the history endpoint updates
-    NSString *status = [NSString stringWithFormat: @"%@requestIDhere", BaseURLString];
+    NSString *status = [NSString stringWithFormat: @"%@/requests/requestIDhere", BaseURLString];
     NSURL *url = [NSURL URLWithString:status];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
