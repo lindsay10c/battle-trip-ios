@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "battletrip"
+    },
+    "battletrip": {
+      "applicationId": "XQ6eGuBCxZfhiXmz3coOIefE0LTQ04aNaZON2dCC"
+    }
+  }
+}
