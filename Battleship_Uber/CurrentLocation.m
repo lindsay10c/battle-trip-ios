@@ -30,8 +30,13 @@
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
+    [super viewDidLoad];
+    self->mapView.showsUserLocation=YES;
+    self->mapView.delegate = self;
+    [self->mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-        [locationManager requestWhenInUseAuthorization];
+        [locationManager requestWhenInU seAuthorization];
 
     [locationManager startUpdatingLocation];
     
@@ -51,6 +56,7 @@
 //    
 //    [mapView addAnnotation:point];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
