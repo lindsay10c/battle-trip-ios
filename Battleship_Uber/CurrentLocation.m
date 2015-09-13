@@ -8,11 +8,15 @@
 
 #import "CurrentLocation.h"
 
+#import "UberService.h"
+
 @interface CurrentLocation ()
 
 @end
 
-@implementation CurrentLocation
+@implementation CurrentLocation {
+    UberService *_uberService;
+}
 
 
 - (void)viewDidLoad {
@@ -31,7 +35,8 @@
 
     [locationManager startUpdatingLocation];
     
- 
+    _uberService = [[UberService alloc] init];
+    [_uberService startUpdating];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {

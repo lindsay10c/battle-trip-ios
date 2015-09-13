@@ -30,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3BD71DA61BA4BFCB00B27F58 /* Battleship_Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Battleship_Uber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD71DA61BA4BFCB00B27F58 /* Battleship_Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Battleship_Uber.app; path = "/Users/lindsaychen/Documents/battle-trip-ios/Battleship_Uber/build/Debug-iphoneos/Battleship_Uber.app"; sourceTree = "<absolute>"; };
 		3BD71DAA1BA4BFCB00B27F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BD71DAB1BA4BFCB00B27F58 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BD71DAD1BA4BFCB00B27F58 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		3BD71DB71BA4BFCB00B27F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BD71DB91BA4BFCB00B27F58 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3BD71DBC1BA4BFCB00B27F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3BD71DC21BA4BFCB00B27F58 /* Battleship_UberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Battleship_UberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD71DC21BA4BFCB00B27F58 /* Battleship_UberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Battleship_UberTests.xctest; path = "/Users/lindsaychen/Documents/battle-trip-ios/Battleship_Uber/build/Debug-iphoneos/Battleship_UberTests.xctest"; sourceTree = "<absolute>"; };
 		3BD71DC71BA4BFCB00B27F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BD71DC81BA4BFCB00B27F58 /* Battleship_UberTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Battleship_UberTests.m; sourceTree = "<group>"; };
 		3BD71DD21BA4BFD400B27F58 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -75,17 +75,7 @@
 				3BD71DD21BA4BFD400B27F58 /* MapKit.framework */,
 				3BD71DA81BA4BFCB00B27F58 /* Battleship_Uber */,
 				3BD71DC51BA4BFCB00B27F58 /* Battleship_UberTests */,
-				3BD71DA71BA4BFCB00B27F58 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		3BD71DA71BA4BFCB00B27F58 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3BD71DA61BA4BFCB00B27F58 /* Battleship_Uber.app */,
-				3BD71DC21BA4BFCB00B27F58 /* Battleship_UberTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		3BD71DA81BA4BFCB00B27F58 /* Battleship_Uber */ = {
@@ -203,7 +193,7 @@
 				Base,
 			);
 			mainGroup = 3BD71D9D1BA4BFCB00B27F58;
-			productRefGroup = 3BD71DA71BA4BFCB00B27F58 /* Products */;
+			productRefGroup = 3BD71D9D1BA4BFCB00B27F58;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -437,6 +427,7 @@
 				3BD71DCE1BA4BFCB00B27F58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BD71DCF1BA4BFCB00B27F58 /* Build configuration list for PBXNativeTarget "Battleship_UberTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +436,7 @@
 				3BD71DD11BA4BFCB00B27F58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
