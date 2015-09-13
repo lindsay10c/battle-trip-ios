@@ -10,11 +10,13 @@
 		3BD71DAC1BA4BFCB00B27F58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DAB1BA4BFCB00B27F58 /* main.m */; };
 		3BD71DAF1BA4BFCB00B27F58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DAE1BA4BFCB00B27F58 /* AppDelegate.m */; };
 		3BD71DB21BA4BFCB00B27F58 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DB11BA4BFCB00B27F58 /* FirstViewController.m */; };
-		3BD71DB51BA4BFCB00B27F58 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DB41BA4BFCB00B27F58 /* SecondViewController.m */; };
+		3BD71DB51BA4BFCB00B27F58 /* CurrentLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DB41BA4BFCB00B27F58 /* CurrentLocation.m */; };
 		3BD71DB81BA4BFCB00B27F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD71DB61BA4BFCB00B27F58 /* Main.storyboard */; };
 		3BD71DBA1BA4BFCB00B27F58 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BD71DB91BA4BFCB00B27F58 /* Images.xcassets */; };
 		3BD71DBD1BA4BFCB00B27F58 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD71DBB1BA4BFCB00B27F58 /* LaunchScreen.xib */; };
 		3BD71DC91BA4BFCB00B27F58 /* Battleship_UberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DC81BA4BFCB00B27F58 /* Battleship_UberTests.m */; };
+		3BD71DD31BA4BFD400B27F58 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD71DD21BA4BFD400B27F58 /* MapKit.framework */; };
+		3BD71DD81BA4FF4F00B27F58 /* UberService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD71DD71BA4FF4F00B27F58 /* UberService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +37,17 @@
 		3BD71DAE1BA4BFCB00B27F58 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3BD71DB01BA4BFCB00B27F58 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		3BD71DB11BA4BFCB00B27F58 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		3BD71DB31BA4BFCB00B27F58 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		3BD71DB41BA4BFCB00B27F58 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3BD71DB31BA4BFCB00B27F58 /* CurrentLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocation.h; sourceTree = "<group>"; };
+		3BD71DB41BA4BFCB00B27F58 /* CurrentLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocation.m; sourceTree = "<group>"; };
 		3BD71DB71BA4BFCB00B27F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BD71DB91BA4BFCB00B27F58 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3BD71DBC1BA4BFCB00B27F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3BD71DC21BA4BFCB00B27F58 /* Battleship_UberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Battleship_UberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD71DC71BA4BFCB00B27F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BD71DC81BA4BFCB00B27F58 /* Battleship_UberTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Battleship_UberTests.m; sourceTree = "<group>"; };
+		3BD71DD21BA4BFD400B27F58 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3BD71DD71BA4FF4F00B27F58 /* UberService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberService.m; sourceTree = "<group>"; };
+		3BD71DD91BA4FF7E00B27F58 /* UberService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UberService.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD71DD31BA4BFD400B27F58 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,7 @@
 		3BD71D9D1BA4BFCB00B27F58 = {
 			isa = PBXGroup;
 			children = (
+				3BD71DD21BA4BFD400B27F58 /* MapKit.framework */,
 				3BD71DA81BA4BFCB00B27F58 /* Battleship_Uber */,
 				3BD71DC51BA4BFCB00B27F58 /* Battleship_UberTests */,
 				3BD71DA71BA4BFCB00B27F58 /* Products */,
@@ -86,10 +93,12 @@
 			children = (
 				3BD71DAD1BA4BFCB00B27F58 /* AppDelegate.h */,
 				3BD71DAE1BA4BFCB00B27F58 /* AppDelegate.m */,
+				3BD71DD91BA4FF7E00B27F58 /* UberService.h */,
+				3BD71DD71BA4FF4F00B27F58 /* UberService.m */,
 				3BD71DB01BA4BFCB00B27F58 /* FirstViewController.h */,
 				3BD71DB11BA4BFCB00B27F58 /* FirstViewController.m */,
-				3BD71DB31BA4BFCB00B27F58 /* SecondViewController.h */,
-				3BD71DB41BA4BFCB00B27F58 /* SecondViewController.m */,
+				3BD71DB31BA4BFCB00B27F58 /* CurrentLocation.h */,
+				3BD71DB41BA4BFCB00B27F58 /* CurrentLocation.m */,
 				3BD71DB61BA4BFCB00B27F58 /* Main.storyboard */,
 				3BD71DB91BA4BFCB00B27F58 /* Images.xcassets */,
 				3BD71DBB1BA4BFCB00B27F58 /* LaunchScreen.xib */,
@@ -173,6 +182,11 @@
 				TargetAttributes = {
 					3BD71DA51BA4BFCB00B27F58 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3BD71DC11BA4BFCB00B27F58 = {
 						CreatedOnToolsVersion = 6.4;
@@ -224,9 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BD71DB51BA4BFCB00B27F58 /* SecondViewController.m in Sources */,
+				3BD71DB51BA4BFCB00B27F58 /* CurrentLocation.m in Sources */,
 				3BD71DAF1BA4BFCB00B27F58 /* AppDelegate.m in Sources */,
 				3BD71DB21BA4BFCB00B27F58 /* FirstViewController.m in Sources */,
+				3BD71DD81BA4FF4F00B27F58 /* UberService.m in Sources */,
 				3BD71DAC1BA4BFCB00B27F58 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
